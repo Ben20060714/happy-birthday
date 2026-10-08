@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Une carte d'anniversaire pleine de douceur et de magie." />
+  <title>Joyeux anniversaire Laurelle ✨</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Georgia', 'serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            night: '#151126',
+            blush: '#ffb7d5',
+            lilac: '#c8b6ff',
+            butter: '#ffe8a3'
+          },
+          boxShadow: {
+            glow: '0 0 70px rgba(255, 183, 213, .26)'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #151126; }
+    .stars { background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,.9) 0 1px, transparent 1.5px), radial-gradient(circle at 70% 30%, rgba(255,232,163,.85) 0 1px, transparent 1.5px), radial-gradient(circle at 50% 75%, rgba(255,255,255,.7) 0 1px, transparent 1.5px); background-size: 150px 150px, 190px 190px, 220px 220px; }
+    .float { animation: float 5s ease-in-out infinite; }
+    .float-delay { animation: float 6.5s ease-in-out 1s infinite; }
+    .twinkle { animation: twinkle 2.2s ease-in-out infinite; }
+    .twinkle-delay { animation: twinkle 2.2s ease-in-out .8s infinite; }
+    .pop { animation: pop .7s cubic-bezier(.2,1.4,.5,1) both; }
+    .confetti { position: fixed; width: 9px; height: 14px; top: -20px; z-index: 50; pointer-events: none; animation: fall linear forwards; }
+    .letter { transform-style: preserve-3d; transition: transform .9s cubic-bezier(.2,.8,.2,1); }
+    .letter.open { transform: rotateY(180deg); }
+    .letter-face { backface-visibility: hidden; }
+    .letter-back { transform: rotateY(180deg); }
+    @keyframes float { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-18px) rotate(4deg); } }
+    @keyframes twinkle { 0%,100% { opacity: .35; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.2); } }
+    @keyframes pop { from { opacity: 0; transform: translateY(18px) scale(.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes fall { to { transform: translate3d(var(--drift), 110vh, 0) rotate(720deg); opacity: 0; } }
+  </style>
+</head>
+<body class="text-white antialiased">
+  <main class="relative min-h-screen overflow-hidden stars">
+    <div class="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-pink-400/20 blur-3xl"></div>
+    <div class="pointer-events-none absolute -right-24 top-1/3 h-96 w-96 rounded-full bg-violet-400/20 blur-3xl"></div>
+
+    <span class="twinkle absolute left-[12%] top-24 text-xl text-butter">✦</span>
+    <span class="twinkle-delay absolute right-[17%] top-40 text-2xl text-blush">✦</span>
+    <span class="twinkle absolute left-[25%] top-[58%] text-sm text-lilac">✦</span>
+
+    <div class="relative mx-auto flex min-h-screen max-w-6xl flex-col px-5 py-8 sm:px-8">
+      <nav class="flex items-center justify-between">
+        <a href="#accueil" class="font-display text-lg tracking-wide text-white/90">Pour toi ✨</a>
+        <button id="confettiButton" class="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm backdrop-blur transition hover:scale-105 hover:bg-white/20" type="button">Lancer la magie</button>
+      </nav>
+
+      <section id="accueil" class="grid flex-1 items-center gap-12 py-16 lg:grid-cols-[1.05fr_.95fr] lg:py-24">
+        <div class="pop">
+          <p class="mb-5 inline-flex rounded-full border border-blush/30 bg-blush/10 px-4 py-2 text-sm text-blush">Aujourd’hui est un jour spécial</p>
+          <h1 class="max-w-2xl font-display text-5xl leading-[.98] sm:text-7xl">Joyeux anniversaire, <span class="text-blush">Laurelle</span> !</h1>
+          <p class="mt-7 max-w-xl text-lg leading-8 text-white/70">Une petite page remplie de couleurs, de souvenirs et de tout ce que je n’arrive pas toujours à dire à voix haute.</p>
+          <div class="mt-9 flex flex-wrap gap-4">
+            <a href="#lettre" class="rounded-full bg-blush px-6 py-3 font-semibold text-night shadow-glow transition hover:-translate-y-1 hover:bg-white">Lire ta surprise</a>
+            <a href="#souvenirs" class="rounded-full border border-white/20 px-6 py-3 font-semibold text-white/90 transition hover:-translate-y-1 hover:bg-white/10">Nos souvenirs ↓</a>
+          </div>
+        </div>
+
+        <div class="relative mx-auto h-[470px] w-full max-w-md">
+          <div class="absolute -right-2 top-0 h-28 w-24 rounded-full bg-lilac/70 shadow-lg shadow-violet-300/20 float-delay"></div>
+          <div class="absolute -left-2 bottom-12 h-28 w-20 rounded-full bg-blush/80 shadow-lg shadow-pink-300/20 float"></div>
+          <div class="absolute left-1/2 top-5 h-[390px] w-[82%] -translate-x-1/2 rotate-3 rounded-[2.5rem] bg-gradient-to-br from-blush/60 to-violet-500/60 p-2 shadow-glow">
+            <div class="relative h-full overflow-hidden rounded-[2rem] border border-white/30 bg-night">
+              <img src="raamin-ka-uR51HXLO7G0-unsplash.jpg" alt="Portrait de Laurelle" class="h-full w-full object-cover object-center opacity-90 transition duration-700 hover:scale-105" />
+              <div class="absolute inset-0 bg-gradient-to-t from-night/90 via-transparent to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-7">
+                <p class="font-display text-3xl text-butter">Laurelle ✨</p>
+                <p class="mt-2 text-sm text-white/75">Que ta journée soit aussi belle que toi.</p>
+              </div>
+            </div>
+          </div>
+          <div class="absolute bottom-1 right-4 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm backdrop-blur">🎂 Une journée pour toi</div>
+        </div>
+      </section>
+
+      <section id="lettre" class="mx-auto w-full max-w-3xl pb-24">
+        <div class="mb-8 text-center">
+          <p class="text-sm uppercase tracking-[.3em] text-blush">Une lettre rien que pour toi</p>
+          <h2 class="mt-3 font-display text-4xl sm:text-5xl">Ouvre la carte 💌</h2>
+        </div>
+        <div class="[perspective:1200px]">
+          <button id="letterButton" class="letter relative mx-auto block h-72 w-full max-w-xl text-left focus:outline-none focus-visible:ring-4 focus-visible:ring-blush/60" type="button" aria-label="Ouvrir la carte d'anniversaire">
+            <div class="letter-face absolute inset-0 flex items-center justify-center rounded-3xl border border-white/20 bg-gradient-to-br from-pink-400 to-violet-500 p-8 shadow-glow">
+              <div class="text-center"><div class="text-6xl">💌</div><p class="mt-4 font-display text-3xl">Clique pour ouvrir</p><p class="mt-2 text-white/70">Il y a un message à l’intérieur…</p></div>
+            </div>
+            <div class="letter-face letter-back absolute inset-0 overflow-auto rounded-3xl border border-white/20 bg-[#fff8fb] p-8 text-night shadow-2xl sm:p-12">
+              <p class="font-display text-2xl text-violet-700">Ma chère Laurelle,</p>
+              <p class="mt-5 leading-7">Aujourd’hui, je veux simplement te rappeler à quel point tu es importante. Merci pour tes sourires, tes conseils, tes blagues et tous les petits moments qui deviennent de grands souvenirs.</p>
+              <p class="mt-4 leading-7">Je te souhaite une année remplie de bonheur, de belles surprises et de rêves qui se réalisent. Ne change pas : tu es unique, et c’est exactement ce qui te rend merveilleuse.</p>
+              <p class="mt-5 font-display text-xl text-pink-600">Je t’adore. Joyeux anniversaire ! 🎉</p>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <section id="souvenirs" class="pb-24">
+        <div class="mb-8 text-center"><p class="text-sm uppercase tracking-[.3em] text-lilac">Petits bonheurs</p><h2 class="mt-3 font-display text-4xl sm:text-5xl">Les souvenirs qui brillent</h2></div>
+        <div class="grid gap-5 sm:grid-cols-3">
+          <article class="rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur transition hover:-translate-y-2 hover:bg-white/15"><div class="mb-5 text-4xl">😂</div><h3 class="font-display text-2xl">Nos fous rires</h3><p class="mt-3 text-sm leading-6 text-white/60">Ceux qui commencent pour rien et finissent par nous faire pleurer de rire.</p></article>
+          <article class="rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur transition hover:-translate-y-2 hover:bg-white/15"><div class="mb-5 text-4xl">🌟</div><h3 class="font-display text-2xl">Ta lumière</h3><p class="mt-3 text-sm leading-6 text-white/60">Tu rends les journées ordinaires un peu plus douces et beaucoup plus jolies.</p></article>
+          <article class="rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur transition hover:-translate-y-2 hover:bg-white/15"><div class="mb-5 text-4xl">🤍</div><h3 class="font-display text-2xl">Notre amitié</h3><p class="mt-3 text-sm leading-6 text-white/60">Un lien précieux que je garde dans mon cœur, aujourd’hui et pour longtemps.</p></article>
+        </div>
+      </section>
+
+      <footer class="border-t border-white/10 py-8 text-center text-sm text-white/45">Fait avec beaucoup d’affection pour une personne unique ✨</footer>
+    </div>
+  </main>
+
+  <script>
+    const letterButton = document.querySelector('#letterButton');
+    const confettiButton = document.querySelector('#confettiButton');
+
+    letterButton.addEventListener('click', () => {
+      letterButton.classList.toggle('open');
+      if (letterButton.classList.contains('open')) launchConfetti(36);
+    });
+
+    confettiButton.addEventListener('click', () => launchConfetti(70));
+
+    function launchConfetti(amount = 50) {
+      const colors = ['#ffb7d5', '#c8b6ff', '#ffe8a3', '#ffffff', '#f472b6'];
+      for (let i = 0; i < amount; i += 1) {
+        const piece = document.createElement('i');
+        piece.className = 'confetti';
+        piece.style.left = `${Math.random() * 100}vw`;
+        piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDuration = `${2.4 + Math.random() * 2.5}s`;
+        piece.style.animationDelay = `${Math.random() * .45}s`;
+        piece.style.setProperty('--drift', `${-150 + Math.random() * 300}px`);
+        piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+        document.body.appendChild(piece);
+        window.setTimeout(() => piece.remove(), 5500);
+      }
+    }
+  </script>
+</body>
+</html>
